@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.5.2'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+//'2.7.11'
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
+    testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+    implementation group: 'org.json', name: 'json', version: '20220320'
+    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
