@@ -36,7 +36,7 @@ public class OrderChecker {
     private boolean orderExpired(Order order) {
         Date thisInstant = new Date();
         long seconds = (thisInstant.getTime() - order.getStartDate().getTime()) / 1000;
-        long maxSeconds = 60 * 1; // 10 Minutes
+        long maxSeconds = 60 * 10; // 10 Minutes
         return seconds > maxSeconds;
     }
 
